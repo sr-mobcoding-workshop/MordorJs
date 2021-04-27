@@ -1,0 +1,26 @@
+{
+  "name": "nDoors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superdodon/nDoors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superdodon/nDoors/issues"
+  },
+  "homepage": "https://github.com/superdodon/nDoors#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  }
+}
