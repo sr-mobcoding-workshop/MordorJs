@@ -9,7 +9,7 @@ export function sum(a, b) {
  */
 export function nDoors (numberOfDoors) {
     // all doors are closed
-    const doors = new Array(numberOfDoors).fill(false)
+    const doors = createDoors(numberOfDoors)
     
     for (let pass = 1; pass <= numberOfDoors; pass++) {
         for (let doorIdx = 0; doorIdx < doors.length; doorIdx++) {
@@ -23,6 +23,13 @@ export function nDoors (numberOfDoors) {
 
     return doors
 }
+
+/**
+ * Create array of doors with given number, initially closed
+ * @param {*} numberOfDoors 
+ * @returns 
+ */
+export const createDoors = (numberOfDoors) => new Array(numberOfDoors).fill(false)
 
 /**
  * Print the doors to the console. @ means open, # means closed
