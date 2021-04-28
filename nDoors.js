@@ -12,15 +12,26 @@ export function nDoors (numberOfDoors) {
     const doors = createDoors(numberOfDoors)
     
     for (let pass = 1; pass <= numberOfDoors; pass++) {
-        for (let doorIdx = 0; doorIdx < doors.length; doorIdx++) {
-            // bump doorIdx to match the pass index
-            if ((doorIdx + 1) % pass === 0) {
-                const toggleDoor = doors[doorIdx]
-                doors[doorIdx] = !toggleDoor
-            }
-        }
+        toggleDoors(pass, doors)
     }
 
+    return doors
+}
+
+/**
+ * toggle the doors
+ * @param {*} pass 
+ * @param {*} doors 
+ * @returns 
+ */
+export function toggleDoors (pass, doors) {
+    for (let doorIdx = 0; doorIdx < doors.length; doorIdx++) {
+        // bump doorIdx to match the pass index
+        if ((doorIdx + 1) % pass === 0) {
+            const toggleDoor = doors[doorIdx]
+            doors[doorIdx] = !toggleDoor
+        }
+    }
     return doors
 }
 
