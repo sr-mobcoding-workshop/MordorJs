@@ -17,3 +17,7 @@ test('Test if if function creates array with X dimensions and Y Size', () => {
 test('convert to camel case', () => {
     expect(camelizeSnailCase('one_two')).toBe('oneTwo')
 })
+
+test('hex of rgb color (255, 0, 0)', () => {
+    expect(rgbToHex(255, 0, 0)).toBe('#FF0000')
+})
