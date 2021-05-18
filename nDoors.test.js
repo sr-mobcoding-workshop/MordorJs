@@ -1,21 +1,19 @@
-import { createDoors, nDoors, toggleDoors } from './nDoors'
+import { firstDayOfMonth, getNameOfDay, createMultiDimensionalArray, camelizeSnailCase } from './nDoors';
 
-test('that all doors are closed at the beginning', () => {
-    console.log(createDoors(100).every(Boolean))
-    expect(createDoors(100).every(Boolean)).toBe(false)
+test( 'firstDayOfMonth', () => {
+    expect(firstDayOfMonth(new Date('1970-01-20')).getDate() ).toBe(1);
+    expect(() => {firstDayOfMonth('1970-01-20')}).toThrow();
+} )
+
+test( 'if the day of my birthday was a Tuesday', () => {
+    expect(getNameOfDay(new Date('1979-04-24'))).toBe('Tuesday');
+} )
+
+test('Test if if function creates array with X dimensions and Y Size', () => {
+    expect(createMultiDimensionalArray(2,2)[0].length).toBe(2);
+    expect(createMultiDimensionalArray(3,6)[0][0].length).toBe(6);
 })
 
-test('should return the same number of doors passed in the beginning', () => {
-    expect(nDoors(50).length).toBe(50)
-    expect(nDoors(66).length).toBe(66)
-})
-
-test('that all doors are open after first round', () => {
-    let testDoors = createDoors(50)
-    expect(toggleDoors(1, testDoors).every(Boolean)).toBe(true)
-})
-
-test('that every second door is closed after second round', () => {
-    let testDoors = createDoors(10)
-    expect(toggleDoors(2, testDoors).every(elem => elem % 2 == 0)).toBe(false)
+test('convert to camel case', () => {
+    expect(camelizeSnailCase('one_two')).toBe('oneTwo')
 })

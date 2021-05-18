@@ -1,57 +1,49 @@
-export function sum(a, b) {
-    return a + b
-}
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 /**
- * 
- * @param {*} numberOfDoors 
- * @returns array of doors
- */
-export function nDoors (numberOfDoors) {
-    // all doors are closed
-    const doors = createDoors(numberOfDoors)
-    
-    for (let pass = 1; pass <= numberOfDoors; pass++) {
-        toggleDoors(pass, doors)
-    }
-
-    return doors
-}
-
-/**
- * toggle the doors
- * @param {*} pass 
- * @param {*} doors 
+ * build a new date object out of dateObjects year and dateObjects month and day 1
+ * @param {*} dateObject 
  * @returns 
  */
-export function toggleDoors (pass, doors) {
-    for (let doorIdx = 0; doorIdx < doors.length; doorIdx++) {
-        // bump doorIdx to match the pass index
-        if ((doorIdx + 1) % pass === 0) {
-            const toggleDoor = doors[doorIdx]
-            doors[doorIdx] = !toggleDoor
+export function firstDayOfMonth(dateObject) {
+    return new Date(dateObject.getFullYear(), dateObject.getMonth(), 1)
+}
+
+/**
+ * Get the day of the given date as string
+ * @param {*} dateObject 
+ * @returns 
+ */
+export const getNameOfDay = (dateObject) => weekdays[dateObject.getDay()]
+
+
+
+
+
+// [[0,2],[5,6]]
+
+export function createMultiDimensionalArray(dimensions, size) {
+    const a = new Array(size);
+    if( dimensions ) {
+        for( let i = 0; i < size; i++ ) {
+            a[i] = createMultiDimensionalArray(dimensions-1, size);
         }
     }
-    return doors
+    return a;
 }
 
-/**
- * Create array of doors with given number, initially closed
- * @param {*} numberOfDoors 
- * @returns 
- */
-export const createDoors = (numberOfDoors) => new Array(numberOfDoors).fill(false)
 
-/**
- * Print the doors to the console. @ means open, # means closed
- * @param {*} doors 
- */
-export function printDoors (doors) {
-    const doorsWithSymbols = new Array()
-
-    doors.forEach((doorOpen) => doorsWithSymbols.push(doorOpen ? '@' : '#'))
-    console.log(doorsWithSymbols.join(''));
+export function capitalize(someString) {
+    return someString[0].toUpperCase() + someString.substring(1);;
 }
 
-let hundredDoors = nDoors(100)
-printDoors(hundredDoors)
+export function camelizeSnailCase(someString) {
+    var a = someString.split('_');
+    var r = a[0];
+    for(var i=1; i<a.length; i++) {
+        r += capitalize(a[i]);
+    }
+    return r;
+}
+
+// someString[0].toUpperCase() + someString.slice(1);
