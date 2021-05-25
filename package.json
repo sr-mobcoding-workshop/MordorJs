@@ -1,23 +1,23 @@
 {
-  "name": "n-doors",
+  "name": "mordojs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon --exec babel-node nDoors.js"
+    "start": "nodemon --exec babel-node mordor.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/superdodon/nDoors.git"
+    "url": "git+https://github.com/sr-mobcoding-workshop/mordorjs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/superdodon/nDoors/issues"
+    "url": "https://github.com/sr-mobcoding-workshop/mordorjs/issues"
   },
-  "homepage": "https://github.com/superdodon/nDoors#readme",
+  "homepage": "https://github.com/sr-mobcoding-workshop/mordorjs#readme",
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
