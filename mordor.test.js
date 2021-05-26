@@ -1,5 +1,5 @@
-import { sum } from './mordor'
+import { displayNumber } from './mordor'
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+test('outputs digit one', () => {
+    expect(displayNumber(1)).toBe('   \n  |\n  |\n');
 });
